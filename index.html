@@ -135,6 +135,76 @@
         width: 90%;
     }
 }
+        .cta-section {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: rgba(255, 255, 255, 0.03); /* Subtle separation */
+    border-top: 1px solid rgba(197, 160, 89, 0.2); /* Faint gold divider */
+    margin-top: 60px;
+}
+
+.cta-section h2 {
+    color: #C5A059;
+    font-size: 2rem;
+    margin-bottom: 35px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.btn {
+    padding: 18px 35px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 2px; /* Sharp, executive edges */
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 13px;
+    display: inline-block;
+}
+
+/* LinkedIn: Professional Outline */
+.linkedin-btn {
+    border: 2px solid #C5A059;
+    color: #C5A059;
+}
+
+.linkedin-btn:hover {
+    background-color: #C5A059;
+    color: #001f3f; /* Navy background */
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
+}
+
+/* Calendly: Solid Gold Action */
+.calendly-btn {
+    background-color: #C5A059;
+    color: #001f3f;
+    border: 2px solid #C5A059;
+}
+
+.calendly-btn:hover {
+    background-color: transparent;
+    color: #C5A059;
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
     </style>
 </head>
 <body>
@@ -188,5 +258,13 @@
             &copy; 2026 Dan Cox. All rights reserved.
         </footer>
     </div>
+    <section class="cta-section">
+    <h2>Ready to Strategize?</h2>
+    <div class="cta-buttons">
+        <a href="https://www.linkedin.com/in/dancoxcareer/" target="_blank" class="btn linkedin-btn">Connect on LinkedIn</a>
+        
+        <a href="https://calendly.com/daniel-jeffrey-cox/30min" target="_blank" class="btn calendly-btn">Schedule 30-Min Session</a>
+    </div>
+</section>
 </body>
 </html>
