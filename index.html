@@ -135,75 +135,36 @@
         width: 90%;
     }
 }
-        .cta-section {
+        /* ISOLATED & SPACIOUS CTA SECTION */
+.cta-section {
     text-align: center;
-    padding: 80px 20px;
-    background-color: rgba(255, 255, 255, 0.03); /* Subtle separation */
-    border-top: 1px solid rgba(197, 160, 89, 0.2); /* Faint gold divider */
-    margin-top: 60px;
+    
+    /* THE KEY: Massive padding (120px) on top and bottom. 
+       This pushes the header far away. */
+    padding: 120px 20px; 
+    
+    /* THE LIFT: A subtle 'slate navy' contrast (#1a2a3a) to distinguish 
+       it from the dark body background. */
+    background-color: #1a2a3a;
+    
+    /* Subtle border details to add structure */
+    border-top: 1px solid rgba(197, 160, 89, 0.3);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+    
+    /* Ensures the section starts fresh and doesn't overlap previous headers. */
+    margin-top: 100px;
+    width: 100%;
+    display: block;
+    clear: both;
 }
 
 .cta-section h2 {
     color: #C5A059;
-    font-size: 2rem;
-    margin-bottom: 35px;
-    letter-spacing: 2px;
+    font-size: 1.8rem;
+    margin-bottom: 50px; /* Space between the question and the buttons */
+    letter-spacing: 3px;
     text-transform: uppercase;
-}
-
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-
-.btn {
-    padding: 18px 35px;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 2px; /* Sharp, executive edges */
-    transition: all 0.4s ease;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-size: 13px;
-    display: inline-block;
-}
-
-/* LinkedIn: Professional Outline */
-.linkedin-btn {
-    border: 2px solid #C5A059;
-    color: #C5A059;
-}
-
-.linkedin-btn:hover {
-    background-color: #C5A059;
-    color: #001f3f; /* Navy background */
-    box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
-}
-
-/* Calendly: Solid Gold Action */
-.calendly-btn {
-    background-color: #C5A059;
-    color: #001f3f;
-    border: 2px solid #C5A059;
-}
-
-.calendly-btn:hover {
-    background-color: transparent;
-    color: #C5A059;
-    box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    .btn {
-        width: 100%;
-        max-width: 300px;
-    }
+    font-family: 'Playfair Display', serif;
 }
     </style>
 </head>
