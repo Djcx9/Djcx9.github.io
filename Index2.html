@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Strategic | Daniel Cox, EMBA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #001f3f;
+            --gold: #C5A059;
+            --white: #ffffff;
+            --light-navy: #1a2a3a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--navy);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 5%;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            background: var(--navy);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand-identity {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .personal-identity {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 120px 10% 80px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .hero h2 {
+            font-size: 1.6rem;
+            color: var(--gold);
+            font-weight: 300;
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+
+        .hero-intro {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 100px 5%;
+            background-color: var(--light-navy);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            padding: 40px;
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            background: var(--navy);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .service-card h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            opacity: 0.85;
+        }
+
+        .engagement-hint {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        /* SOCIAL PROOF */
+        .social-proof {
+            padding: 100px 10%;
+            text-align: center;
+            background: var(--navy);
+        }
+
+        .testimonial-block {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial-block blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .testimonial-author {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            color: var(--gold);
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            padding: 120px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .audit-container {
+            max-width: 600px;
+            margin: 0 auto 60px;
+            padding: 40px;
+            background: var(--light-navy);
+            border: 1px solid var(--gold);
+        }
+
+        .audit-container p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            transition: all 0.3s ease;
+            min-width: 260px;
+            display: inline-block;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: rgba(197, 160, 89, 0.1);
+        }
+
+        .btn-solid {
+            background: var(--gold);
+            color: var(--navy);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-solid:hover {
+            background: #d4b475;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-identity">Delta Strategic</div>
+        <div class="personal-identity">Daniel Cox, EMBA</div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Strategic Navigation</h1>
+            <h2>I help organizations close the gap between AI ambition and human reality.</h2>
+            <p class="hero-intro">
+                Specializing in fractional growth and internal change management for SMB and mid-market leaders across Atlantic Canada. 
+                Together, we bridge the delta between complex data and emotional readiness.
+            </p>
+        </section>
+
+        <section class="services">
+            <div class="service-card">
+                <h3>Change Management</h3>
+                <p>The "human delta" is where most organizational transitions fail. I help mid-market leaders stabilize their teams during periods of intense growth or structural shifts.</p>
+                <p>By prioritizing emotional leadership alongside performance outcomes, we ensure your people remain aligned, resilient, and productive.</p>
+            </div>
+            <div class="service-card">
+                <h3>AI Readiness</h3>
+                <p>Rapid AI adoption often leads to fragmented workflows and security risks. This service is for organizations needing a strategic roadmap to replace "time-thief" processes with meaningful automation.</p>
+                <p>We build a risk-mitigated implementation plan that delivers immediate time-back for high-value leadership activities.</p>
+            </div>
+            <div class="service-card">
+                <h3>Strategic Growth</h3>
+                <p>Scaling past a leadership bottleneck requires more than just new hires; it requires executive systems. I provide fractional CGO-level oversight to professionalize operations and drive outcomes.</p>
+                <p>Success is measured by sustained growth and a leadership culture that can scale without the founder in every meeting.</p>
+                <span class="engagement-hint">Typically structured as 3–6 month retainers for organizations ready to move.</span>
+            </div>
+        </section>
+
+        <section class="social-proof">
+            <div class="testimonial-block">
+                <blockquote>
+                    "Dan's unique approach to organizational change combines rigorous performance measurement with a sophisticated understanding of human dynamics. He doesn't just manage the process; he navigates the people."
+                </blockquote>
+                <div class="testimonial-author">
+                    [Placeholder Name] &bull; [Title], [Organization]
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="audit-container">
+                <p>Not sure where to start? Take the free 5-minute AI Readiness Audit to identify your organizational bottlenecks.</p>
+                <a href="https://docs.google.com/forms/d/1NKQoiIOMxynwXvt-S_sLK_z793p-TqhYoheSGtYc5Ts/viewform" target="_blank" class="btn btn-solid">Begin Audit</a>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="https://www.linkedin.com/in/dancoxcareer/" target="_blank" class="btn btn-outline">Connect on LinkedIn</a>
+                <a href="https://calendly.com/daniel-jeffrey-cox/30min" target="_blank" class="btn btn-outline">Schedule Session</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 DELTA STRATEGIC ADVISORY | ATLANTIC CANADA
+    </footer>
+
+</body>
+</html>
