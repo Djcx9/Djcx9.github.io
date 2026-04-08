@@ -143,41 +143,86 @@ body {
     overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
+/* THE CTA "ISLAND" */
 .cta-section {
-    display: block;
-    width: 100%;
-    /* This color is slightly lighter than pure black/navy for contrast */
-    background-color: #162433; 
-    padding: 100px 0;
-    margin-top: 80px;
+    background-color: #1a2a3a;
+    padding: 120px 20px;
     border-top: 1px solid rgba(197, 160, 89, 0.2);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
     text-align: center;
+    width: 100%;
+}
+
+.cta-section h2 {
+    color: #C5A059;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
 }
 
 .cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 30px; /* Better spacing between buttons */
-    margin-top: 40px;
+    align-items: center;
+    gap: 30px; /* Adjusted for three buttons */
+    flex-wrap: wrap; /* Ensures they wrap on smaller screens */
 }
 
 .btn {
-    display: inline-block;
     padding: 18px 30px;
     text-decoration: none;
-    letter-spacing: 2px;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     font-size: 13px;
-    transition: 0.3s;
     border-radius: 2px;
+    transition: all 0.3s ease;
+    min-width: 240px; /* Keeps buttons uniform in size */
 }
 
-/* Mobile Fix */
-@media (max-width: 768px) {
+/* SECONDARY: LinkedIn (Outline) */
+.linkedin-btn {
+    border: 2px solid #C5A059;
+    color: #C5A059;
+}
+
+.linkedin-btn:hover {
+    background-color: rgba(197, 160, 89, 0.1);
+}
+
+/* PRIMARY: AI Audit (Solid & High Contrast) */
+.audit-btn {
+    background-color: #C5A059;
+    color: #1a2a3a;
+    border: 2px solid #C5A059;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.audit-btn:hover {
+    background-color: #d4b475; /* Slightly lighter gold */
+    transform: translateY(-2px);
+}
+
+/* SECONDARY: Calendly (Outline) */
+.calendly-btn {
+    border: 2px solid #C5A059;
+    color: #C5A059;
+}
+
+.calendly-btn:hover {
+    background-color: rgba(197, 160, 89, 0.1);
+}
+
+/* MOBILE STACKING */
+@media (max-width: 900px) {
     .cta-buttons {
         flex-direction: column;
-        align-items: center;
         gap: 20px;
+    }
+    .btn {
+        width: 80%;
+        max-width: 300px;
     }
 }
     </style>
@@ -225,12 +270,16 @@ body {
         </section>
 
        <section class="cta-section">
-    <h2>Ready to navigate what's next?</h2>
-    <div class="cta-buttons">
-        <a href="https://www.linkedin.com/in/dancoxcareer/" target="_blank" class="btn linkedin-btn">Connect on LinkedIn</a>
-        <a href="https://calendly.com/daniel-jeffrey-cox/30min" target="_blank" class="btn calendly-btn">Schedule 30-Min Session</a>
+    <div class="cta-content">
+        <h2>Ready to navigate what's next?</h2>
+        <div class="cta-buttons">
+            <a href="https://www.linkedin.com/in/dancoxcareer/" target="_blank" class="btn linkedin-btn">Connect on LinkedIn</a>
+            <a href="https://docs.google.com/forms/d/1NKQoiIOMxynwXvt-S_sLK_z793p-TqhYoheSGtYc5Ts/viewform" target="_blank" class="btn audit-btn">Take AI Readiness Audit</a>
+            <a href="https://calendly.com/daniel-jeffrey-cox/30min" target="_blank" class="btn calendly-btn">Schedule 30-Min Session</a>
+        </div>
     </div>
 </section>
+
 
 <footer style="text-align: center; padding: 40px; color: rgba(255,255,255,0.3); font-size: 12px;">
     © 2026 Dan Cox. All rights reserved.
