@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Navigation | Cox Consulting</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            background-color: #03152a; 
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+        .fade-in { animation: fadeIn 0.4s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-slate-100 antialiased min-h-screen flex flex-col justify-between">
+
+    <header class="w-full max-w-7xl mx-auto px-6 py-6 flex justify-between items-center bg-transparent">
+        <div class="text-xl font-bold tracking-widest text-[#dfb76c] uppercase">
+            Cox Consulting
+        </div>
+        <div class="text-sm font-medium tracking-wide text-slate-300">
+            Daniel Cox, EMBA
+        </div>
+    </header>
+
+    <main class="flex-grow w-full max-w-6xl mx-auto px-4 py-8 flex flex-col items-center">
+        
+        <div class="text-center max-w-3xl mb-12 space-y-6">
+            <h2 class="serif-title text-4xl sm:text-5xl lg:text-6xl text-white font-medium tracking-tight">
+                Strategic Navigation
+            </h2>
+            <p class="serif-title text-xl sm:text-2xl text-[#dfb76c] italic font-light max-w-2xl mx-auto leading-relaxed">
+                I help organizations close the gap between AI ambition and human reality.
+            </p>
+            <p class="text-sm sm:text-base text-slate-300 font-light leading-relaxed max-w-2xl mx-auto">
+                Specializing in fractional growth and internal change management for SMB and mid-market leaders across Atlantic Canada. Together, we bridge the delta between complex data and emotional readiness.
+            </p>
+        </div>
+
+        <section class="w-full bg-[#071d37] rounded-2xl border border-slate-800 p-6 sm:p-8 shadow-2xl">
+            <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-sliders text-[#dfb76c]"></i> AI Funding Matcher
+            </h3>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+                
+                <div class="bg-[#041528] rounded-xl p-5 border border-slate-800/80">
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 pb-2 border-b border-slate-800">
+                        STEP 1: Business Profile
+                    </div>
+                    
+                    <form id="fundingForm" onsubmit="event.preventDefault(); matchFunding();" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 mb-1.5">Industry:</label>
+                            <select id="industry" class="w-full bg-[#071d37] border border-slate-700 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-[#dfb76c]">
+                                <option value="retail">Retail</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="tech">Tech</option>
+                                <option value="professional" selected>Professional Services</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 mb-1.5">Business Size:</label>
+                            <select id="size" class="w-full bg-[#071d37] border border-slate-700 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-[#dfb76c]">
+                                <option value="micro">1-10</option>
+                                <option value="small" selected>11-50</option>
+                                <option value="medium">51-200</option>
+                                <option value="enterprise">200+</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 mb-1.5">Primary Goal:</label>
+                            <select id="objective" class="w-full bg-[#071d37] border border-slate-700 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-[#dfb76c]">
+                                <option value="customer">Automating Customer Service</option>
+                                <option value="predictive">Predictive Maintenance</option>
+                                <option value="workflow" selected>Workflow Automation</option>
+                                <option value="custom">Data Analytics</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 mb-1.5">Funding Level:</label>
+                            <select id="fundingLevel" class="w-full bg-[#071d37] border border-slate-700 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-[#dfb76c]">
+                                <option value="small" selected>Small Business</option>
+                                <option value="mid">Mid Market</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="w-full bg-white hover:bg-slate-100 text-slate-900 font-bold text-xs uppercase tracking-wider py-3 rounded-lg transition shadow-md cursor-pointer mt-2">
+                            Get Matched
+                        </button>
+                    </form>
+                </div>
+
+                <div class="bg-[#041528] rounded-xl p-5 border border-slate-800/80 lg:col-span-1">
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 pb-2 border-b border-slate-800 flex justify-between items-center">
+                        <span>STEP 2: Matching Options</span>
+                        <span id="matchBadge" class="bg-blue-950 text-blue-300 text-[10px] font-bold px-2 py-0.5 rounded border border-blue-800">3 Found</span>
+                    </div>
+
+                    <div id="resultsContainer" class="space-y-3">
+                        </div>
+                    
+                    <div class="text-[11px] text-slate-500 mt-4 italic text-center">
+                        * Regional matching optimized for Atlantic Canada
+                    </div>
+                </div>
+
+                <div class="bg-[#041528] rounded-xl p-5 border border-slate-800/80">
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 pb-2 border-b border-slate-800">
+                        STEP 3: Application Simplicity
+                    </div>
+                    <p class="text-xs text-slate-400 mb-4">How it works:</p>
+                    
+                    <ul class="space-y-4 text-xs text-slate-300">
+                        <li class="flex items-center gap-3">
+                            <span class="flex items-center justify-center w-5 h-5 rounded-full border border-slate-600 text-slate-400 text-[10px]"><i class="fa-solid fa-check"></i></span>
+                            <span>Select Match</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="flex items-center justify-center w-5 h-5 rounded-full border border-slate-600 text-slate-400 text-[10px]"><i class="fa-solid fa-check"></i></span>
+                            <span>Draft Application</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="flex items-center justify-center w-5 h-5 rounded-full border border-slate-600 text-slate-400 text-[10px]"><i class="fa-solid fa-check"></i></span>
+                            <span>Review & Submit</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="flex items-center justify-center w-5 h-5 rounded-full border border-slate-600 text-slate-400 text-[10px]"><i class="fa-solid fa-check"></i></span>
+                            <span>Receive Funding</span>
+                        </li>
+                    </ul>
+
+                    <button class="w-full bg-white hover:bg-slate-100 text-slate-900 font-bold text-xs uppercase tracking-wider py-3 rounded-lg transition shadow-md cursor-pointer mt-6">
+                        Apply Now
+                    </button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full border-t border-slate-900 bg-[#020f20] py-6 text-center text-xs text-slate-500 mt-12">
+        <p>&copy; 2026 Cox Consulting. Strategic AI diagnostics, change management frameworks, and internal organizational readiness architectures.</p>
+    </footer>
+
+    <script>
+        const fundingPrograms = [
+            {
+                id: "raii",
+                title: "Al Implementation Voucher",
+                category: "Grents",
+                level: "Federal",
+                agency: "ACOA / Regional Development Agencies",
+                value: "Up to $37,500 non-repayable",
+                criteria: { sizes: ["micro", "small"], objectives: ["workflow", "customer"] }
+            },
+            {
+                id: "bdc-lift",
+                title: "SME Digital Modernization...",
+                category: "Loans",
+                level: "Federal",
+                agency: "Business Development Bank of Canada (BDC)",
+                value: "Up to $100,000 low-interest financing",
+                criteria: { sizes: ["small", "medium", "enterprise"], objectives: ["workflow", "predictive", "custom"] }
+            },
+            {
+                id: "compute-fund",
+                title: "Venture Capital for AI Scale",
+                category: "Equity",
+                level: "Federal",
+                agency: "ISED Digital Framework Sector",
+                value: "67% Tech Infrastructure Subsidy",
+                criteria: { sizes: ["medium", "enterprise"], objectives: ["predictive", "custom"] }
+            }
+        ];
+
+        function matchFunding() {
+            const selectedSize = document.getElementById("size").value;
+            const selectedObjective = document.getElementById("objective").value;
+            const container = document.getElementById("resultsContainer");
+            
+            container.innerHTML = "";
+
+            const matches = fundingPrograms.filter(prog => {
+                return prog.criteria.sizes.includes(selectedSize) || prog.criteria.objectives.includes(selectedObjective);
+            });
+
+            document.getElementById("matchBadge").innerText = `${matches.length} Found`;
+
+            matches.forEach(prog => {
+                const item = document.createElement("div");
+                item.className = "bg-[#071d37] border border-slate-800 rounded-lg p-3.5 space-y-2 fade-in";
+                item.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="text-slate-400 text-[10px] uppercase font-bold tracking-wide">${prog.category}</span>
+                        </div>
+                        <span class="text-[10px] font-semibold text-[#dfb76c] bg-slate-900/80 px-2 py-0.5 rounded border border-slate-800">${prog.level}</span>
+                    </div>
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="truncate">
+                            <h4 class="text-xs font-bold text-white truncate" title="${prog.title}">${prog.title}</h4>
+                            <p class="text-[10px] text-slate-400 truncate mt-0.5">${prog.agency}</p>
+                        </div>
+                        <button class="bg-white hover:bg-slate-100 text-slate-950 text-[9px] font-bold uppercase tracking-wider px-2.5 py-1.5 rounded shrink-0 transition">
+                            Explore
+                        </button>
+                    </div>
+                    <div class="text-[10px] font-medium text-emerald-400 bg-emerald-950/30 px-2 py-1 rounded border border-emerald-900/50 flex items-center gap-1.5">
+                        <i class="fa-solid fa-wallet text-[9px]"></i> ${prog.value}
+                    </div>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        window.onload = matchFunding;
+    </script>
+</body>
+</html>
