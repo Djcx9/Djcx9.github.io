@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundational English Workforce Grants | Fund Matcher</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="font-bold text-lg text-blue-900 tracking-tight">FoundationalLanguage.Fund</div>
+            <div class="space-x-6 text-sm font-medium text-slate-600">
+                <a href="#matcher" class="hover:text-blue-600">Fund Matcher</a>
+                <a href="#directory" class="hover:text-blue-600">Grant Directory</a>
+                <a href="#about" class="hover:text-blue-600">The CLB 1-3 Gap</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-blue-900 to-slate-900 text-white py-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="bg-blue-800 text-blue-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Targeted Workforce Development</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6 leading-tight">Funding Beginner English Training Beyond IRCC Limits</h1>
+            <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">Access specialized grants and employer co-investment programs designed specifically for pre-benchmark literacy and CLB 1–3 workforce communication skills.</p>
+            <a href="#matcher" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition duration-200">Launch Grant Finder</a>
+        </div>
+    </header>
+
+    <!-- Interactive Matcher Tool -->
+    <section id="matcher" class="py-16 px-6 max-w-5xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-8 md:p-12">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-slate-900">Interactive Workforce Fund Matcher</h2>
+                <p class="text-slate-600 text-sm mt-1">Select your parameters to surface matching non-repayable grants and training support programs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-500 mb-2">Target Proficiency Tier</label>
+                    <select id="levelFilter" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-blue-500">
+                        <option value="all">All Beginner Tiers (Pre-CLB 4)</option>
+                        <option value="literacy">Pre-Benchmark / Literacy</option>
+                        <option value="clb12">CLB Level 1 & 2</option>
+                        <option value="clb3">CLB Level 3</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-500 mb-2">Industry Sector</label>
+                    <select id="sectorFilter" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-blue-500">
+                        <option value="all">All Sectors</option>
+                        <option value="manufacturing">Manufacturing & Supply Chain</option>
+                        <option value="trades">Trades & Construction</option>
+                        <option value="hospitality">Hospitality & Care Services</option>
+                    </select>
+                </div>
+                <div class="flex items-end">
+                    <button onclick="filterGrants()" class="w-full bg-slate-900 hover:bg-blue-900 text-white font-medium p-3 rounded-lg text-sm transition">Find Programs</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Results Box -->
+            <div id="resultsContainer" class="space-y-4">
+                <div class="border border-slate-200 rounded-xl p-6 bg-slate-50">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-xs font-bold text-blue-700 bg-blue-100 px-2 py-0.5 rounded">Co-Investment Grant</span>
+                            <h3 class="font-bold text-lg text-slate-900 mt-1">Essential Skills & Workforce Training Stream</h3>
+                        </div>
+                        <span class="text-sm font-semibold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">Up to 66% Covered</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mt-2">Covers third-party instruction costs for foundational communication barriers where standard settlement structures are unavailable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-10 text-center text-sm">
+        <p>&copy; 2026 Foundational Language Initiative. Built via GitHub Pages deployment framework.</p>
+    </footer>
+
+    <script>
+        function filterGrants() {
+            const container = document.getElementById('resultsContainer');
+            container.innerHTML = `
+                <div class="border border-blue-200 rounded-xl p-6 bg-blue-50/50">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-xs font-bold text-blue-800 bg-blue-200 px-2 py-0.5 rounded">Filtered Result</span>
+                            <h3 class="font-bold text-lg text-blue-900 mt-1">Targeted Regional Workforce Upgrade Stream</h3>
+                        </div>
+                        <span class="text-sm font-semibold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">Cost-Sharing Available</span>
+                    </div>
+                    <p class="text-sm text-slate-700 mt-2">Customized training subsidy aligned with your chosen parameters for pre-CLB 4 worker cohorts.</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
