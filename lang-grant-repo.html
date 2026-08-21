@@ -62,18 +62,27 @@
                 </div>
             </div>
 
-            <!-- Dynamic Results Box -->
+            <!-- Dynamic Results Container -->
             <div id="resultsContainer" class="space-y-4">
-                <div class="border border-slate-200 rounded-xl p-6 bg-slate-50">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <span class="text-xs font-bold text-blue-700 bg-blue-100 px-2 py-0.5 rounded">Co-Investment Grant</span>
-                            <h3 class="font-bold text-lg text-slate-900 mt-1">Essential Skills & Workforce Training Stream</h3>
-                        </div>
-                        <span class="text-sm font-semibold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">Up to 66% Covered</span>
-                    </div>
-                    <p class="text-sm text-slate-600 mt-2">Covers third-party instruction costs for foundational communication barriers where standard settlement structures are unavailable.</p>
-                </div>
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Context / Directory Section -->
+    <section id="directory" class="py-16 px-6 max-w-5xl mx-auto border-t border-slate-200">
+        <div class="mb-10 text-center">
+            <h2 class="text-3xl font-bold text-slate-900">Core Funding Streams Framework</h2>
+            <p class="text-slate-600 mt-2">Why foundational communication tiers require alternate funding mechanisms outside federal immigrant settlement caps.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                <h3 class="font-bold text-lg text-blue-900 mb-2">The Settlement vs. Workplace Disconnect</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">Standard immigration language streams (like LINC) prioritize public settlement tracks and often target higher benchmarks (CLB 4+) needed for permanent residency or citizenship milestones. Frontline workers starting at pre-literacy or CLB 1–2 face severe communication gaps on day one of employment that slow down safety and operational throughput.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                <h3 class="font-bold text-lg text-blue-900 mb-2">Employer Co-Investment Leverage</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">Provincial job grant frameworks bridge this divide by covering up to two-thirds (66%+) of third-party trainer fees, custom materials, and software expenses for targeted essential skills development.</p>
             </div>
         </div>
     </section>
@@ -84,21 +93,79 @@
     </footer>
 
     <script>
+        // Database of grant matching options
+        const grantDatabase = [
+            {
+                title: "Canada-Job Grant Essential Skills Stream",
+                levels: ["literacy", "clb12", "clb3"],
+                sectors: ["manufacturing", "trades", "hospitality"],
+                coverage: "Up to 66% - 100% Covered",
+                type: "Employer Co-Investment Grant",
+                description: "Covers third-party trainer fees, tailored curriculum design, and instructional material costs for foundational communication barriers where standard settlement structures are unavailable.",
+                maxCap: "Up to $10,000 per participant"
+            },
+            {
+                title: "Workplace Essential Skills (WES) Direct Delivery",
+                levels: ["literacy", "clb12"],
+                sectors: ["manufacturing", "trades"],
+                coverage: "100% Fully Funded Assessment & Training",
+                type: "Provincial Workforce Support",
+                description: "Customized on-site training assessment and delivery focused directly on operational safety terms, reading, and basic workplace dialogue for high-demand sectors.",
+                maxCap: "Direct provincial program allocation"
+            },
+            {
+                title: "Regional Labour Force Development Pilot",
+                levels: ["clb12", "clb3"],
+                sectors: ["hospitality", "manufacturing"],
+                coverage: "Up to 75% Non-Repayable",
+                type: "Sector Innovation Pilot",
+                description: "Targeted regional initiative designed to integrate lower-benchmark newcomers into fast-track line operations through modular, micro-credentialed language coaching.",
+                maxCap: "Varies by project proposal scope"
+            }
+        ];
+
         function filterGrants() {
+            const selectedLevel = document.getElementById('levelFilter').value;
+            const selectedSector = document.getElementById('sectorFilter').value;
             const container = document.getElementById('resultsContainer');
-            container.innerHTML = `
-                <div class="border border-blue-200 rounded-xl p-6 bg-blue-50/50">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <span class="text-xs font-bold text-blue-800 bg-blue-200 px-2 py-0.5 rounded">Filtered Result</span>
-                            <h3 class="font-bold text-lg text-blue-900 mt-1">Targeted Regional Workforce Upgrade Stream</h3>
-                        </div>
-                        <span class="text-sm font-semibold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">Cost-Sharing Available</span>
+
+            // Filter logic
+            const filtered = grantDatabase.filter(grant => {
+                const matchLevel = (selectedLevel === 'all' || grant.levels.includes(selectedLevel));
+                const matchSector = (selectedSector === 'all' || grant.sectors.includes(selectedSector));
+                return matchLevel && matchSector;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="border border-amber-200 rounded-xl p-6 bg-amber-50 text-center">
+                        <h3 class="font-bold text-amber-900">No direct matches found for this specific combination.</h3>
+                        <p class="text-sm text-slate-600 mt-1">Try broadening your sector or tier selection to view general provincial funding options.</p>
                     </div>
-                    <p class="text-sm text-slate-700 mt-2">Customized training subsidy aligned with your chosen parameters for pre-CLB 4 worker cohorts.</p>
+                `;
+                return;
+            }
+
+            // Render output cards
+            container.innerHTML = filtered.map(grant => `
+                <div class="border border-slate-200 rounded-xl p-6 bg-slate-50 hover:border-blue-300 transition shadow-sm">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-3">
+                        <div>
+                            <span class="text-xs font-bold text-blue-700 bg-blue-100 px-2.5 py-1 rounded-full">${grant.type}</span>
+                            <h3 class="font-bold text-lg text-slate-900 mt-2">${grant.title}</h3>
+                        </div>
+                        <div class="flex flex-col items-end">
+                            <span class="text-sm font-semibold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">${grant.coverage}</span>
+                            <span class="text-xs text-slate-500 mt-1">${grant.maxCap}</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">${grant.description}</p>
                 </div>
-            `;
+            `).join('');
         }
+
+        // Run initial load to show default view
+        window.onload = filterGrants;
     </script>
 </body>
 </html>
