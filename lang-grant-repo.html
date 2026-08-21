@@ -8,8 +8,14 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
 
+    <!-- Version Control Bar -->
+    <div class="bg-slate-900 text-slate-300 text-xs py-1.5 px-6 flex justify-between items-center border-b border-slate-800">
+        <div>Environment: <span class="text-white font-mono">Production (GitHub Pages)</span></div>
+        <div>Release Build: <span class="bg-blue-600 text-white px-2 py-0.5 rounded font-mono font-semibold">v1.2.0-2026.08</span></div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <nav class="bg-white border-b border-slate-200 sticky top-6 z-50">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="font-bold text-lg text-blue-900 tracking-tight">FoundationalLanguage.Fund</div>
             <div class="space-x-6 text-sm font-medium text-slate-600">
@@ -45,10 +51,10 @@
                     <select id="jurisdictionFilter" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-blue-500">
                         <option value="all">All Canadian Jurisdictions</option>
                         <option value="federal">Federal / Pan-Canadian Streams</option>
-                        <option value="nb">New Brunswick (CNBJG / TSD)</option>
-                        <option value="ns">Nova Scotia (Workplace Innovation)</option>
+                        <option value="nb">New Brunswick (WorkingNB / PETL)</option>
+                        <option value="ns">Nova Scotia (WIPSI)</option>
                         <option value="on">Ontario (COJG Framework)</option>
-                        <option value="bc">British Columbia (Employer Grant)</option>
+                        <option value="bc">British Columbia (ETG)</option>
                     </select>
                 </div>
                 <div>
@@ -102,31 +108,22 @@
 
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-400 py-10 text-center text-sm">
-        <p>&copy; 2026 Foundational Language Initiative. Built via GitHub Pages deployment framework.</p>
+        <p>&copy; 2026 Foundational Language Initiative. Built via GitHub Pages deployment framework. | Version v1.2.0-2026.08</p>
     </footer>
 
     <script>
-        // Comprehensive Database of Canadian Workforce Language Grants
+        // Comprehensive Database with Verified Administrative Links
         const grantDatabase = [
             {
-                title: "Canada-New Brunswick Job Grant (CNBJG) Essential Skills Stream",
+                title: "Canada-New Brunswick Job Grant (CNBJG) / WorkingNB",
                 jurisdictions: ["nb", "federal"],
                 levels: ["literacy", "clb12", "clb3"],
                 sectors: ["manufacturing", "trades", "hospitality"],
-                coverage: "Up to 66% - 100% Training Subsidies",
+                coverage: "Up to 66% - 100% Subsidies",
                 type: "Provincial / Federal Job Grant",
                 description: "Covers third-party trainer fees and tailored material costs for foundational workplace communication barriers where standard settlement structures are unavailable.",
-                maxCap: "Up to $10,000 per participant"
-            },
-            {
-                title: "Workforce Expansion & Training and Skills Development (TSD)",
-                jurisdictions: ["nb"],
-                levels: ["literacy", "clb12"],
-                sectors: ["manufacturing", "trades", "hospitality"],
-                coverage: "Full Support / Direct Allocation",
-                type: "Provincial Labour Stream",
-                description: "Supports individual workers and enterprise cohorts requiring targeted essential skills and communication upgrading to achieve job stability and safety readiness.",
-                maxCap: "Varies by organizational training plan"
+                maxCap: "Up to $10,000 per participant",
+                url: "https://workingnb.ca/"
             },
             {
                 title: "Canada-Ontario Job Grant (COJG) - Workplace Communication Stream",
@@ -136,17 +133,19 @@
                 coverage: "Up to 83% for Small Business / 66% General",
                 type: "Provincial Job Grant",
                 description: "Direct employer-driven financial support to deliver literacy and foundational language training for frontline staff needing direct operational competency.",
-                maxCap: "Up to $10,000-$15,000 per trainee"
+                maxCap: "Up to $10,000-$15,000 per trainee",
+                url: "https://www.ontario.ca/page/ontario-job-grant"
             },
             {
-                title: "Nova Scotia Workplace Innovation & Productivity Skills Grant",
+                title: "Nova Scotia Workplace Innovation & Productivity Skills Incentive (WIPSI)",
                 jurisdictions: ["ns", "federal"],
                 levels: ["literacy", "clb12", "clb3"],
                 sectors: ["manufacturing", "hospitality", "trades"],
                 coverage: "75% to 100% Non-Repayable",
                 type: "Provincial Productivity Fund",
                 description: "Aids businesses in upgrading workforce essential skills, language communication, and operational efficiency through certified third-party instructors.",
-                maxCap: "Project-tier dependent"
+                maxCap: "Project-tier dependent",
+                url: "https://novascotia.ca/programs/workplace-innovation-productivity-skills-incentive/"
             },
             {
                 title: "British Columbia Employer Training Grant (ETG)",
@@ -156,7 +155,8 @@
                 coverage: "Up to 80% - 100% Subsidized",
                 type: "Provincial Training Grant",
                 description: "Supports skills training streams including foundational literacy and beginner language upgrades for workforce integration and safety compliance.",
-                maxCap: "Up to $300,000 per employer per fiscal year"
+                maxCap: "Up to $300,000 per employer per fiscal year",
+                url: "https://www2.gov.bc.ca/gov/content/employment-business/economic-development/funding-and-grants/bc-employer-training-grant"
             },
             {
                 title: "Skills for Success Federal Sector Pilot Framework",
@@ -166,7 +166,8 @@
                 coverage: "Fully Funded Pilot Projects",
                 type: "Federal Sector Initiative",
                 description: "Pan-Canadian grants targeting essential communication, document use, and basic literacy skills across critical foundational sectors.",
-                maxCap: "Managed via national call-for-proposals"
+                maxCap: "Managed via national call-for-proposals",
+                url: "https://www.canada.ca/en/services/jobs/training/initiatives/skills-success.html"
             }
         ];
 
@@ -194,20 +195,27 @@
                 return;
             }
 
-            // Render output cards
+            // Render output cards with direct outbound administration links
             container.innerHTML = filtered.map(grant => `
-                <div class="border border-slate-200 rounded-xl p-6 bg-slate-50 hover:border-blue-300 transition shadow-sm">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-3">
-                        <div>
-                            <span class="text-xs font-bold text-blue-700 bg-blue-100 px-2.5 py-1 rounded-full">${grant.type}</span>
-                            <h3 class="font-bold text-lg text-slate-900 mt-2">${grant.title}</h3>
+                <div class="border border-slate-200 rounded-xl p-6 bg-slate-50 hover:border-blue-300 transition shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-3">
+                            <div>
+                                <span class="text-xs font-bold text-blue-700 bg-blue-100 px-2.5 py-1 rounded-full">${grant.type}</span>
+                                <h3 class="font-bold text-lg text-slate-900 mt-2">${grant.title}</h3>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <span class="text-sm font-semibold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">${grant.coverage}</span>
+                                <span class="text-xs text-slate-500 mt-1">${grant.maxCap}</span>
+                            </div>
                         </div>
-                        <div class="flex flex-col items-end">
-                            <span class="text-sm font-semibold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">${grant.coverage}</span>
-                            <span class="text-xs text-slate-500 mt-1">${grant.maxCap}</span>
-                        </div>
+                        <p class="text-sm text-slate-600 mt-2 leading-relaxed">${grant.description}</p>
                     </div>
-                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">${grant.description}</p>
+                    <div class="mt-4 pt-4 border-t border-slate-200 flex justify-end">
+                        <a href="${grant.url}" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1">
+                            Access Official Program Portal &rarr;
+                        </a>
+                    </div>
                 </div>
             `).join('');
         }
