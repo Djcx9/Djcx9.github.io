@@ -25,7 +25,7 @@
         <div class="max-w-4xl mx-auto text-center">
             <span class="bg-blue-800 text-blue-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Targeted Workforce Development</span>
             <h1 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6 leading-tight">Funding Beginner English Training Beyond IRCC Limits</h1>
-            <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">Access specialized grants and employer co-investment programs designed specifically for pre-benchmark literacy and CLB 1–3 workforce communication skills.</p>
+            <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">Access specialized federal-provincial grants, employer co-investment programs, and workforce loans designed specifically for pre-benchmark literacy and CLB 1–3 communication skills.</p>
             <a href="#matcher" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition duration-200">Launch Grant Finder</a>
         </div>
     </header>
@@ -35,10 +35,22 @@
         <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-8 md:p-12">
             <div class="mb-8">
                 <h2 class="text-2xl font-bold text-slate-900">Interactive Workforce Fund Matcher</h2>
-                <p class="text-slate-600 text-sm mt-1">Select your parameters to surface matching non-repayable grants and training support programs.</p>
+                <p class="text-slate-600 text-sm mt-1">Filter across federal-provincial job grants, skills development streams, and foundational literacy funds.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <!-- Filter Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-500 mb-2">Jurisdiction / Province</label>
+                    <select id="jurisdictionFilter" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-blue-500">
+                        <option value="all">All Canadian Jurisdictions</option>
+                        <option value="federal">Federal / Pan-Canadian Streams</option>
+                        <option value="nb">New Brunswick (CNBJG / TSD)</option>
+                        <option value="ns">Nova Scotia (Workplace Innovation)</option>
+                        <option value="on">Ontario (COJG Framework)</option>
+                        <option value="bc">British Columbia (Employer Grant)</option>
+                    </select>
+                </div>
                 <div>
                     <label class="block text-xs font-semibold uppercase text-slate-500 mb-2">Target Proficiency Tier</label>
                     <select id="levelFilter" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-blue-500">
@@ -57,9 +69,10 @@
                         <option value="hospitality">Hospitality & Care Services</option>
                     </select>
                 </div>
-                <div class="flex items-end">
-                    <button onclick="filterGrants()" class="w-full bg-slate-900 hover:bg-blue-900 text-white font-medium p-3 rounded-lg text-sm transition">Find Programs</button>
-                </div>
+            </div>
+
+            <div class="mb-8">
+                <button onclick="filterGrants()" class="w-full md:w-auto bg-slate-900 hover:bg-blue-900 text-white font-medium px-8 py-3 rounded-lg text-sm transition">Find Matching Funding Streams</button>
             </div>
 
             <!-- Dynamic Results Container -->
@@ -72,17 +85,17 @@
     <!-- Context / Directory Section -->
     <section id="directory" class="py-16 px-6 max-w-5xl mx-auto border-t border-slate-200">
         <div class="mb-10 text-center">
-            <h2 class="text-3xl font-bold text-slate-900">Core Funding Streams Framework</h2>
-            <p class="text-slate-600 mt-2">Why foundational communication tiers require alternate funding mechanisms outside federal immigrant settlement caps.</p>
+            <h2 class="text-3xl font-bold text-slate-900">Core Funding Frameworks Map</h2>
+            <p class="text-slate-600 mt-2">Bridging the structural gap between federal settlement initiatives (IRCC) and provincial labour-market training structures.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                <h3 class="font-bold text-lg text-blue-900 mb-2">The Settlement vs. Workplace Disconnect</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">Standard immigration language streams (like LINC) prioritize public settlement tracks and often target higher benchmarks (CLB 4+) needed for permanent residency or citizenship milestones. Frontline workers starting at pre-literacy or CLB 1–2 face severe communication gaps on day one of employment that slow down safety and operational throughput.</p>
+                <h3 class="font-bold text-lg text-blue-900 mb-2">The IRCC Settlement vs. Labour Market Disconnect</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">Standard federal settlement programs (like LINC) focus heavily on general integration and milestones targeting higher benchmarks (CLB 4+). However, entry-level workers starting at pre-literacy or CLB 1–3 face immediate operational and safety communication bottlenecks on day one that standard settlement tracks leave underfunded.</p>
             </div>
             <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                <h3 class="font-bold text-lg text-blue-900 mb-2">Employer Co-Investment Leverage</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">Provincial job grant frameworks bridge this divide by covering up to two-thirds (66%+) of third-party trainer fees, custom materials, and software expenses for targeted essential skills development.</p>
+                <h3 class="font-bold text-lg text-blue-900 mb-2">Leveraging Labour Market Agreements (LMDAs)</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">Through provincial Job Grant structures and Workforce Development Agreements, employers can secure non-repayable co-investment coverage (ranging from 66% to 100%) for third-party essential skills trainers, custom terminology modules, and targeted language upgrading.</p>
             </div>
         </div>
     </section>
@@ -93,54 +106,89 @@
     </footer>
 
     <script>
-        // Database of grant matching options
+        // Comprehensive Database of Canadian Workforce Language Grants
         const grantDatabase = [
             {
-                title: "Canada-Job Grant Essential Skills Stream",
+                title: "Canada-New Brunswick Job Grant (CNBJG) Essential Skills Stream",
+                jurisdictions: ["nb", "federal"],
                 levels: ["literacy", "clb12", "clb3"],
                 sectors: ["manufacturing", "trades", "hospitality"],
-                coverage: "Up to 66% - 100% Covered",
-                type: "Employer Co-Investment Grant",
-                description: "Covers third-party trainer fees, tailored curriculum design, and instructional material costs for foundational communication barriers where standard settlement structures are unavailable.",
+                coverage: "Up to 66% - 100% Training Subsidies",
+                type: "Provincial / Federal Job Grant",
+                description: "Covers third-party trainer fees and tailored material costs for foundational workplace communication barriers where standard settlement structures are unavailable.",
                 maxCap: "Up to $10,000 per participant"
             },
             {
-                title: "Workplace Essential Skills (WES) Direct Delivery",
+                title: "Workforce Expansion & Training and Skills Development (TSD)",
+                jurisdictions: ["nb"],
                 levels: ["literacy", "clb12"],
-                sectors: ["manufacturing", "trades"],
-                coverage: "100% Fully Funded Assessment & Training",
-                type: "Provincial Workforce Support",
-                description: "Customized on-site training assessment and delivery focused directly on operational safety terms, reading, and basic workplace dialogue for high-demand sectors.",
-                maxCap: "Direct provincial program allocation"
+                sectors: ["manufacturing", "trades", "hospitality"],
+                coverage: "Full Support / Direct Allocation",
+                type: "Provincial Labour Stream",
+                description: "Supports individual workers and enterprise cohorts requiring targeted essential skills and communication upgrading to achieve job stability and safety readiness.",
+                maxCap: "Varies by organizational training plan"
             },
             {
-                title: "Regional Labour Force Development Pilot",
+                title: "Canada-Ontario Job Grant (COJG) - Workplace Communication Stream",
+                jurisdictions: ["on", "federal"],
                 levels: ["clb12", "clb3"],
-                sectors: ["hospitality", "manufacturing"],
-                coverage: "Up to 75% Non-Repayable",
-                type: "Sector Innovation Pilot",
-                description: "Targeted regional initiative designed to integrate lower-benchmark newcomers into fast-track line operations through modular, micro-credentialed language coaching.",
-                maxCap: "Varies by project proposal scope"
+                sectors: ["manufacturing", "trades"],
+                coverage: "Up to 83% for Small Business / 66% General",
+                type: "Provincial Job Grant",
+                description: "Direct employer-driven financial support to deliver literacy and foundational language training for frontline staff needing direct operational competency.",
+                maxCap: "Up to $10,000-$15,000 per trainee"
+            },
+            {
+                title: "Nova Scotia Workplace Innovation & Productivity Skills Grant",
+                jurisdictions: ["ns", "federal"],
+                levels: ["literacy", "clb12", "clb3"],
+                sectors: ["manufacturing", "hospitality", "trades"],
+                coverage: "75% to 100% Non-Repayable",
+                type: "Provincial Productivity Fund",
+                description: "Aids businesses in upgrading workforce essential skills, language communication, and operational efficiency through certified third-party instructors.",
+                maxCap: "Project-tier dependent"
+            },
+            {
+                title: "British Columbia Employer Training Grant (ETG)",
+                jurisdictions: ["bc", "federal"],
+                levels: ["literacy", "clb12", "clb3"],
+                sectors: ["manufacturing", "trades", "hospitality"],
+                coverage: "Up to 80% - 100% Subsidized",
+                type: "Provincial Training Grant",
+                description: "Supports skills training streams including foundational literacy and beginner language upgrades for workforce integration and safety compliance.",
+                maxCap: "Up to $300,000 per employer per fiscal year"
+            },
+            {
+                title: "Skills for Success Federal Sector Pilot Framework",
+                jurisdictions: ["federal"],
+                levels: ["literacy", "clb12", "clb3"],
+                sectors: ["manufacturing", "trades", "hospitality"],
+                coverage: "Fully Funded Pilot Projects",
+                type: "Federal Sector Initiative",
+                description: "Pan-Canadian grants targeting essential communication, document use, and basic literacy skills across critical foundational sectors.",
+                maxCap: "Managed via national call-for-proposals"
             }
         ];
 
         function filterGrants() {
+            const selectedJurisdiction = document.getElementById('jurisdictionFilter').value;
             const selectedLevel = document.getElementById('levelFilter').value;
             const selectedSector = document.getElementById('sectorFilter').value;
             const container = document.getElementById('resultsContainer');
 
             // Filter logic
             const filtered = grantDatabase.filter(grant => {
+                const matchJurisdiction = (selectedJurisdiction === 'all' || grant.jurisdictions.includes(selectedJurisdiction));
                 const matchLevel = (selectedLevel === 'all' || grant.levels.includes(selectedLevel));
                 const matchSector = (selectedSector === 'all' || grant.sectors.includes(selectedSector));
-                return matchLevel && matchSector;
+                return matchJurisdiction && matchLevel && matchSector;
             });
 
             if (filtered.length === 0) {
                 container.innerHTML = `
                     <div class="border border-amber-200 rounded-xl p-6 bg-amber-50 text-center">
-                        <h3 class="font-bold text-amber-900">No direct matches found for this specific combination.</h3>
-                        <p class="text-sm text-slate-600 mt-1">Try broadening your sector or tier selection to view general provincial funding options.</p>
+                        <h3 class="font-bold text-amber-900">No direct funding streams match this precise combination.</h3>
+                        <p class="text-sm text-slate-600 mt-1">Try resetting your jurisdiction or tier filters to view broader pan-Canadian options.</p>
                     </div>
                 `;
                 return;
