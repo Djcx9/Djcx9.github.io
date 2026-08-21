@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AITransform.Fund | Canadian AI Adoption & Workforce Grants</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans selection:bg-cyan-500 selection:text-slate-950">
+
+    <!-- Standalone Platform Version Bar -->
+    <div class="bg-slate-900 border-b border-slate-800 text-slate-400 text-xs py-2 px-6 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            <span>Network Node: <strong class="text-slate-200">AITransform.Fund Standalone Engine</strong></span>
+        </div>
+        <div class="font-mono text-cyan-400 bg-slate-950 px-2 py-0.5 rounded border border-slate-800">
+            BUILD v1.0.0-AI.2026
+        </div>
+    </div>
+
+    <!-- Independent Navigation -->
+    <nav class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 to-blue-600 flex items-center justify-center font-black text-white text-xl tracking-tighter shadow-lg shadow-cyan-500/20">AI</div>
+                <div class="font-extrabold text-xl tracking-tight text-white">AI Transform<span class="text-cyan-400">.Fund</span></div>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#engine" class="hover:text-cyan-400 transition">Grant Matcher</a>
+                <a href="#streams" class="hover:text-cyan-400 transition">Funding Ecosystem</a>
+                <a href="#advisory" class="hover:text-cyan-400 transition">Advisory Strategy</a>
+            </div>
+            <div>
+                <a href="#engine" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm transition shadow-lg shadow-cyan-500/20">Match AI Grants</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden pt-24 pb-20 px-6 border-b border-slate-800/80 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <span class="inline-block bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">Enterprise AI & Tech Capital Engine</span>
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
+                Unlock Non-Repayable Capital for <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">AI Transformation & Upskilling</span>
+            </h1>
+            <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Navigate Canadian federal R&D tax incentives, national tech superclusters, and regional provincial job grants built to finance artificial intelligence adoption and team capability scaling.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#engine" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-xl shadow-cyan-500/10 transition">Launch Matching Engine</a>
+                <a href="#streams" class="bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-semibold px-8 py-4 rounded-xl transition">Explore Active Streams</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Interactive Grant Matcher Engine -->
+    <section id="engine" class="py-20 px-6 max-w-5xl mx-auto">
+        <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-white tracking-tight">AI Funding Matcher Matrix</h2>
+                <p class="text-slate-400 text-sm mt-1">Isolate active Canadian capital programs tailored to your organization's precise scale and technological scope.</p>
+            </div>
+
+            <!-- Filters Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Jurisdiction Scope</label>
+                    <select id="jurisdictionFilter" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-sm text-slate-200 focus:outline-none focus:border-cyan-500 transition">
+                        <option value="all">All Canadian Regions</option>
+                        <option value="federal">Federal / National Programs</option>
+                        <option value="nb">New Brunswick / Atlantic Streams</option>
+                        <option value="on">Ontario Regional Frameworks</option>
+                        <option value="bc">British Columbia Innovation Streams</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Project Focus</label>
+                    <select id="focusFilter" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-sm text-slate-200 focus:outline-none focus:border-cyan-500 transition">
+                        <option value="all">All Focus Areas</option>
+                        <option value="upskilling">Workforce AI Training & Upskilling</option>
+                        <option value="rd">Proprietary R&D & Model Fine-Tuning</option>
+                        <option value="adoption">Commercial Technology Adoption</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Enterprise Sector</label>
+                    <select id="sectorFilter" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-sm text-slate-200 focus:outline-none focus:border-cyan-500 transition">
+                        <option value="all">All Sectors & Industries</option>
+                        <option value="supplychain">Supply Chain & Manufacturing</option>
+                        <option value="professional">Professional Services & Consulting</option>
+                        <option value="tech">Software & Deep Tech R&D</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mb-10">
+                <button onclick="filterAIPrograms()" class="w-full md:w-auto bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-8 py-3.5 rounded-xl text-sm transition shadow-lg shadow-cyan-500/10">Filter Programs</button>
+            </div>
+
+            <!-- Dynamic Results Matrix -->
+            <div id="resultsContainer" class="space-y-4">
+                <!-- Dynamically populated via script -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Context Directory Section -->
+    <section id="streams" class="py-20 px-6 max-w-5xl mx-auto border-t border-slate-800/80">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl font-bold text-white tracking-tight">The Canadian AI Capital Stack</h2>
+            <p class="text-slate-400 mt-2">Strategic breakdown of financial instruments available for artificial intelligence transformation.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-slate-900/50 border border-slate-800/80 p-8 rounded-2xl">
+                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold mb-4">01</div>
+                <h3 class="font-bold text-lg text-white mb-3">SR&ED Tax Credits for Proprietary AI</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Unlike off-the-shelf software purchases, developing custom retrieval-augmented generation (RAG) pipelines, fine-tuning weights, or solving technical unknowns in machine learning architecture qualifies for the enhanced Scientific Research and Experimental Development (SR&ED) tax credit program, delivering up to 35% refundable cash credits.</p>
+            </div>
+            <div class="bg-slate-900/50 border border-slate-800/80 p-8 rounded-2xl">
+                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold mb-4">02</div>
+                <h3 class="font-bold text-lg text-white mb-3">Workforce Co-Investment Subsidies</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Provincial job grant frameworks and national upskilling consortia offset between 66% and 83% of third-party coaching and training fees required to bring internal teams up to speed on agentic workflows and automated business applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 text-slate-500 py-12 text-center text-xs">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 AITransform.Fund. Autonomous Advisory Engine. All rights reserved.</p>
+            <p class="font-mono text-cyan-500/80">DEPLOYMENT: BUILD v1.0.0-AI.2026 // STANDALONE</p>
+        </div>
+    </footer>
+
+    <!-- Core Interactive Data & Engine Logic -->
+    <script>
+        const aiGrantDatabase = [
+            {
+                title: "SR&ED AI Research & Experimental Development Credit",
+                jurisdictions: ["federal"],
+                focus: ["rd"],
+                sectors: ["tech", "supplychain", "professional"],
+                coverage: "Up to 35% Refundable Tax Credit",
+                type: "Federal Tax Incentive",
+                description: "Provides cash credits for eligible experimental work, custom model fine-tuning, and resolving technical unknowns during AI architectural deployment.",
+                maxCap: "Calculated on qualifying R&D expenditures",
+                url: "https://www.canada.ca/en/revenue-agency/services/scientific-research-experimental-development-tax-incentive-program.html"
+            },
+            {
+                title: "NRC Industrial Research Assistance Program (IRAP AI Assist)",
+                jurisdictions: ["federal"],
+                focus: ["rd", "adoption"],
+                sectors: ["tech", "supplychain"],
+                coverage: "Up to 80% of Technical Salaries & Subcontractors",
+                type: "Federal Advisory & Grant",
+                description: "Direct non-repayable funding for small and medium enterprises scaling tech teams to build and deploy artificial intelligence commercial products.",
+                maxCap: "$75K to $200K+ initial project scale",
+                url: "https://nrc.canada.ca/en/support-technology-innovation/financial-assistance-nrc-irap"
+            },
+            {
+                title: "Scale AI Collaborative Training Frameworks",
+                jurisdictions: ["federal"],
+                focus: ["upskilling"],
+                sectors: ["supplychain", "professional"],
+                coverage: "Up to 50% Non-Repayable Contribution",
+                type: "National Supercluster Fund",
+                description: "Covers tailored training programs, coaching workshops, and workforce transformation curricula targeted at supply chain optimization and digital intelligence.",
+                maxCap: "Project-scaled allocations",
+                url: "https://www.scaleai.ca/"
+            },
+            {
+                title: "Canada-Ontario Job Grant (Technology & AI Stream)",
+                jurisdictions: ["on", "federal"],
+                focus: ["upskilling", "adoption"],
+                sectors: ["supplychain", "professional", "tech"],
+                coverage: "Up to 83% for Small Business / 66% General",
+                type: "Provincial Job Grant",
+                description: "Co-investment support for employers to deliver specialized technical training courses preparing teams for digital transformation and automated workflows.",
+                maxCap: "Up to $10,000 per trainee",
+                url: "https://www.ontario.ca/page/ontario-job-grant"
+            },
+            {
+                title: "Canada-New Brunswick Job Grant (WorkingNB Digital Stream)",
+                jurisdictions: ["nb", "federal"],
+                focus: ["upskilling", "adoption"],
+                sectors: ["supplychain", "professional", "tech"],
+                coverage: "Up to 66% - 100% Subsidized",
+                type: "Provincial Workforce Grant",
+                description: "Helps regional Atlantic enterprises offset third-party instruction costs for upgrading workforce digital literacy and automation tool adoption.",
+                maxCap: "Up to $10,000 per participant",
+                url: "https://workingnb.ca/"
+            },
+            {
+                title: "British Columbia Employer Training Grant (ETG Tech Stream)",
+                jurisdictions: ["bc", "federal"],
+                focus: ["upskilling"],
+                sectors: ["supplychain", "professional", "tech"],
+                coverage: "Up to 80% - 100% Subsidized",
+                type: "Provincial Training Grant",
+                description: "Finances employer-sponsored training for technological adoption, process automation, and foundational AI workplace tool fluency.",
+                maxCap: "Up to $300,000 per employer annual threshold",
+                url: "https://www2.gov.bc.ca/gov/content/employment-business/economic-development/funding-and-grants/bc-employer-training-grant"
+            }
+        ];
+
+        function filterAIPrograms() {
+            const jurisdiction = document.getElementById('jurisdictionFilter').value;
+            const focus = document.getElementById('focusFilter').value;
+            const sector = document.getElementById('sectorFilter').value;
+            const container = document.getElementById('resultsContainer');
+
+            const filtered = aiGrantDatabase.filter(item => {
+                const matchJ = (jurisdiction === 'all' || item.jurisdictions.includes(jurisdiction));
+                const matchF = (focus === 'all' || item.focus.includes(focus));
+                const matchS = (sector === 'all' || item.sectors.includes(sector));
+                return matchJ && matchF && matchS;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="border border-cyan-500/20 rounded-2xl p-8 bg-cyan-950/20 text-center">
+                        <h3 class="font-bold text-cyan-300">No active AI funding streams match this precise configuration.</h3>
+                        <p class="text-sm text-slate-400 mt-1">Try broadening your regional or focus filters to view broader national programs.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = filtered.map(item => `
+                <div class="border border-slate-800 rounded-2xl p-6 bg-slate-950/60 hover:border-cyan-500/50 transition duration-200 flex flex-col justify-between">
+                    <div>
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-3">
+                            <div>
+                                <span class="text-xs font-bold text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-full">${item.type}</span>
+                                <h3 class="font-bold text-lg text-white mt-2">${item.title}</h3>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <span class="text-sm font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">${item.coverage}</span>
+                                <span class="text-xs text-slate-400 mt-1">${item.maxCap}</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-400 mt-2 leading-relaxed">${item.description}</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex justify-end">
+                        <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition">
+                            Access Official Administrative Portal &rarr;
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize view on load
+        window.onload = filterAIPrograms;
+    </script>
+</body>
+</html>
