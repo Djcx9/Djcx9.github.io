@@ -51,6 +51,18 @@
             z-index: 100;
         }
 
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .brand-mark {
+            height: 42px;
+            width: auto;
+            display: block;
+        }
+
         .brand-identity {
             font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
@@ -242,7 +254,10 @@
 <body>
 
     <header>
-        <div class="brand-identity">Cox Consulting</div>
+        <div class="brand">
+            <img src="assets/compass-rose.svg" alt="Cox Consulting compass rose logo" class="brand-mark">
+            <div class="brand-identity">Cox Consulting</div>
+        </div>
         <div class="personal-identity">Daniel Cox, EMBA</div>
     </header>
 
