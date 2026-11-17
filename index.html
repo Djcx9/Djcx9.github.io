@@ -177,6 +177,95 @@
             color: var(--gold);
         }
 
+        /* HOW IT WORKS */
+        .how-it-works {
+            padding: 100px 5%;
+            background: var(--navy);
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .how-it-works .section-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .step {
+            padding: 30px;
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            background: var(--light-navy);
+        }
+
+        .step-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .step h3 {
+            color: var(--gold);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .step p {
+            font-size: 0.95rem;
+            opacity: 0.85;
+        }
+
+        .how-it-works .section-note {
+            text-align: center;
+            margin-top: 50px;
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 100px 10%;
+            background: var(--light-navy);
+        }
+
+        .faq h2 {
+            text-align: center;
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 50px;
+        }
+
+        .faq-item {
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .faq-item h3 {
+            color: var(--gold);
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            opacity: 0.85;
+        }
+
         /* CTA SECTION */
         .cta-section {
             padding: 120px 5%;
@@ -264,7 +353,7 @@
     <main>
         <section class="hero">
             <h1>You didn't start your business to spend your nights on paperwork.</h1>
-            <h2>Cox Consulting helps owner-run Atlantic small businesses buy back 5–10 hours a week, by fixing one bottleneck first — with practical AI workflows, not a new system to learn.</h2>
+            <h2>Cox Consulting helps owner-run Atlantic small businesses buy back 5–10 hours a week, by fixing one bottleneck first, with practical AI workflows, not a new system to learn.</h2>
             <p class="hero-intro">
                 For owner-run businesses in Atlantic Canada, roughly 1–50 people, drowning in scheduling, invoicing, follow-ups, or paperwork. 
                 We find your biggest time thief, fix that workflow first, and train your team so it sticks.
@@ -290,10 +379,38 @@
             </div>
         </section>
 
+        <section class="how-it-works">
+            <h2>How it works</h2>
+            <p class="section-intro">Four steps. The first three take days, not weeks.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Take the 8-minute Time-Back Audit. Free.</h3>
+                    <p>Eight minutes, on your own time. It finds your biggest time thief.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Get your Time-Back Scorecard by email.</h3>
+                    <p>Shortly after you finish, same day. It names the one bottleneck to fix first.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Book a free 30-minute Time-Back Debrief.</h3>
+                    <p>We walk through the bottleneck, who owns it, and how we would measure the fix. You leave with a Queue Map, an Hours Baseline, a Hand-Off Plan, and a Go/No-Go Note, whether or not we work together.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Run a Time-Back Pilot on one bottleneck.</h3>
+                    <p>Weeks, not months. Scope and price are set at the debrief, once we know the work. No sale if the bottleneck, the owner, and the measure cannot be validated.</p>
+                </div>
+            </div>
+            <p class="section-note">Work starts with one workflow, not a large retainer.</p>
+        </section>
+
         <section class="social-proof">
             <div class="testimonial-block">
                 <blockquote>
-                    "First pilot in progress — no client stories yet. Here's how the work runs instead:"
+                    "First pilot in progress. No client stories yet. Here's how the work runs instead:"
                 </blockquote>
                 <div class="testimonial-author">
                     1) Audit, 2) Diagnose your biggest time thief, 3) Fix one workflow first, 4) Train your team so it sticks. Change management is why it lasts, not the headline.
@@ -301,9 +418,45 @@
             </div>
         </section>
 
+        <section class="faq">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item">
+                <h3>How much does it cost?</h3>
+                <p>The audit and the debrief are free. The pilot is scoped and priced at the debrief, once we know the bottleneck. There is no price before we know the work, and no retainer.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What do I get from the audit?</h3>
+                <p>A scorecard by email, shortly after you finish. It names your biggest time thief and the one bottleneck to fix first.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What happens in the debrief?</h3>
+                <p>Thirty minutes. We walk through your bottleneck, who owns it, and how we would measure the fix. You leave with a Queue Map, an Hours Baseline, a Hand-Off Plan, and a Go/No-Go Note, whether or not we work together.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if there is no clear bottleneck?</h3>
+                <p>Then there is no pilot. If the bottleneck, the owner, and the measure cannot be validated, we do not sell you one. That is the rule.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How long does a pilot take?</h3>
+                <p>Weeks, set at the debrief. It depends on the bottleneck. Steps one to three take days, not weeks.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do I need to learn a new system?</h3>
+                <p>No. The work fixes one workflow you already have, and we train your team so it sticks.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What do you do with my information?</h3>
+                <p>Your email is used only to send your Time-Back Scorecard, one follow-up reminder about your free debrief, and, if you ask, to discuss results. Your audit answers are used to build your scorecard and your pack, and nothing else.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Who runs Cox Consulting?</h3>
+                <p>Dan Cox, EMBA. A change management practitioner based in New Brunswick, helping owner-run Atlantic small businesses buy back time with practical AI workflows.</p>
+            </div>
+        </section>
+
 <section class="cta-section">
     <div class="audit-container">
-        <p>Not sure where to start? Take the 8-minute Time-Back Audit to find your biggest time thief. Your email is used only to send the scorecard and, if you ask, to discuss results.</p>
+        <p>Not sure where to start? Take the 8-minute Time-Back Audit to find your biggest time thief. Your email is used only to send your Time-Back Scorecard, one follow-up reminder about your free debrief, and, if you ask, to discuss results.</p>
         <div class="cta-actions" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 20px;">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSf93e7LCKdpLQmoBsoRB9tXHEdzZGjoeiC12DYltxl542SPVQ/viewform" target="_blank" class="btn btn-solid">Take the 8-minute Time-Back Audit</a>
             <a href="AIFIN.html" class="secondary-link">Find Funding</a>
@@ -313,7 +466,6 @@
 
             <div class="cta-buttons">
                 <a href="https://www.linkedin.com/in/dancoxcareer/" target="_blank" class="secondary-link">Connect on LinkedIn</a>
-                <a href="https://calendly.com/daniel-jeffrey-cox/30min" target="_blank" class="secondary-link" style="display: inline-flex; align-items: center; justify-content: center;">Schedule Session</a>
             </div>
         </section>
     </main>
