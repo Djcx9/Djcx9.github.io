@@ -107,6 +107,10 @@
             opacity: 0.9;
         }
 
+        .hero-cta {
+            margin-top: 40px;
+        }
+
         /* SERVICES */
         .services {
             padding: 100px 5%;
@@ -325,6 +329,20 @@
             transform: translateY(-2px);
         }
 
+        /* HEADER CTA */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-cta {
+            padding: 12px 20px;
+            min-width: 0;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
         footer {
             padding: 40px;
             text-align: center;
@@ -337,6 +355,8 @@
             .hero h1 { font-size: 2.5rem; }
             .cta-buttons { flex-direction: column; align-items: center; }
             .btn { width: 100%; }
+            .header-cta { width: auto; }
+            .personal-identity { display: none; }
         }
     </style>
 </head>
@@ -347,7 +367,10 @@
             <img src="assets/compass-rose.svg" alt="Cox Consulting compass rose logo" class="brand-mark">
             <div class="brand-identity">Cox Consulting</div>
         </div>
-        <div class="personal-identity">Daniel Cox, EMBA</div>
+        <div class="header-right">
+            <div class="personal-identity">Daniel Cox, EMBA</div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf93e7LCKdpLQmoBsoRB9tXHEdzZGjoeiC12DYltxl542SPVQ/viewform" target="_blank" class="btn btn-solid header-cta">Take the Audit</a>
+        </div>
     </header>
 
     <main>
@@ -358,6 +381,9 @@
                 For owner-run businesses in Atlantic Canada, roughly 1–50 people, drowning in scheduling, invoicing, follow-ups, or paperwork. 
                 We find your biggest time thief, fix that workflow first, and train your team so it sticks.
             </p>
+            <div class="hero-cta">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf93e7LCKdpLQmoBsoRB9tXHEdzZGjoeiC12DYltxl542SPVQ/viewform" target="_blank" class="btn btn-solid">Take the 8-minute Time-Back Audit</a>
+            </div>
         </section>
 
         <section class="services">
